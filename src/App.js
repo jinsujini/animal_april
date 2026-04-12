@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './assets/style.scss'
 import Modal from './components/Modal'
@@ -10,13 +10,7 @@ import Me from './components/Me'
 const App = () => {
   const [wishData, setWishData] = useState(null)
 
-  useEffect(() => {
-    const saved = localStorage.getItem('wishData')
-    if (saved) setWishData(JSON.parse(saved))
-  }, [])
-
   const handleSubmit = (data) => {
-    localStorage.setItem('wishData', JSON.stringify(data))
     setWishData(data)
   }
 
@@ -24,12 +18,25 @@ const App = () => {
     <BrowserRouter>
       <div className='wrap'>
         {!wishData && <Modal onSubmit={handleSubmit} />}
+
         <Routes>
           <Route path='/' element={<Navigate to='/jesus' />} />
-          <Route path='/jesus'  element={<Jesus  wishData={wishData} />} />
-          <Route path='/buddha' element={<Buddha wishData={wishData} />} />
-          <Route path='/mary'   element={<Mary   wishData={wishData} />} />
-          <Route path='/me'     element={<Me     wishData={wishData} />} />
+          <Route
+            path='/jesus'
+            element={wishData ? <Jesus wishData={wishData} /> : null}
+          />
+          <Route
+            path='/buddha'
+            element={wishData ? <Buddha wishData={wishData} /> : null}
+          />
+          <Route
+            path='/mary'
+            element={wishData ? <Mary wishData={wishData} /> : null}
+          />
+          <Route
+            path='/me'
+            element={wishData ? <Me wishData={wishData} /> : null}
+          />
         </Routes>
       </div>
     </BrowserRouter>
