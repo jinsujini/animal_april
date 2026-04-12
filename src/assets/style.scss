@@ -69,17 +69,17 @@ body {
 // ============ pages ============
 .jesus_wrap {
   @include page-theme($color-jesus, $accent-jesus, #555, #ffffff);
-  height: 100dvh;
+  height: calc(100dvh - 40px);
 }
 
 .buddha_wrap {
   @include page-theme($color-buddha, $accent-buddha, #555, #ffffff);
-  height: 100dvh;
+  height: calc(100dvh - 40px);
 }
 
 .mary_wrap {
   @include page-theme($color-mary, $accent-mary, #555, #ffffff);
-  height: 100dvh;
+  height: calc(100dvh - 40px);
 }
 
 .me_wrap {
