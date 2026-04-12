@@ -25,7 +25,7 @@ const App = () => {
       <div className='wrap'>
         {!wishData && <Modal onSubmit={handleSubmit} />}
         <Routes>
-          <Route path='/' element={<Navigate to='/me' />} />
+          <Route path='/' element={<Navigate to='/jesus' />} />
           <Route path='/jesus'  element={<Jesus  wishData={wishData} />} />
           <Route path='/buddha' element={<Buddha wishData={wishData} />} />
           <Route path='/mary'   element={<Mary   wishData={wishData} />} />
