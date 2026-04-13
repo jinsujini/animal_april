@@ -92,9 +92,10 @@ const Me = ({ wishData }) => {
             소원을 이루어주세요
           </div>
 
-          <div className='prayer__wish--glow'>
-            {myWish}
-          </div>
+           <div className='prayer__wish--glow'>
+            <div className="name">{wishData?.name}님의 소원</div>
+            <strong> {myWish}</strong>
+            <p>기도해드릴게요</p></div>
         </div>
       )}
 

@@ -1,0 +1,211 @@
+
+@use './var' as *;
+@use './mixin' as *;
+.please_start {
+  display: block;
+  width: calc(100% - 40px);
+  padding: 16px;
+  border-radius: 12px;
+}
+strong{
+    font-size: 40px;
+}
+// components/_prayer.scss
+.prayer__fullscreen {
+  position: fixed;
+  inset: 0;
+}
+// components/_modal.scss
+.modal {
+  background: #fff;
+  border-radius: 16px;
+}
+// ============ reset ============
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #1a1a1a;
+}
+
+// ============ layout ============
+.wrap {
+  width: 100%;
+  max-width: $max-width;
+  max-height: max-content;
+  min-height: 100dvh;
+  margin: 0 auto;
+  position: relative;
+}
+
+// ============ components ============
+.god__photo {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.wish_text {
+    width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+
+}
+
+.please_start {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.1s;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #999;
+    outline-offset: 2px;
+  }
+}
+.jesus_wrap {
+  @include page-theme($color-jesus, $accent-jesus, #555, #ffffff);
+  height: calc(100dvh - 40px);
+}
+
+.buddha_wrap {
+  @include page-theme($color-buddha, $accent-buddha, #555, #ffffff);
+  height: calc(100dvh - 40px);
+}
+
+.mary_wrap {
+  @include page-theme($color-mary, $accent-mary, #555, #ffffff);
+  height: calc(100dvh - 40px);
+}
+
+.me_wrap {
+  @include page-theme($color-me, $accent-me, #888, #000000);
+  height: 100dvh;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__sub {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: #aaa;
+    }
+  }
+
+  &__textarea {
+    height: 90px;
+    resize: none;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #999;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  z-index: 50;
+
+  &__tab {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:focus-visible {
+      outline: 2px solid #999;
+      outline-offset: 2px;
+    }
+  }
+}

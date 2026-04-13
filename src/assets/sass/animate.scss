@@ -1,0 +1,80 @@
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff;
+  }
+
+  to {
+    text-shadow: 0 0 30px #fff, 0 0 60px #fffbe6;
+  }
+}
+@keyframes glowScale {
+  0% {
+    transform: scale(1);
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ffd700,
+      0 0 20px #ffd700;
+  }
+
+  50% {
+    transform: scale(1.15); // ⭐️ 커짐
+    text-shadow:
+      0 0 10px #fff,
+      0 0 25px #fff,
+      0 0 50px #ffd700,
+      0 0 80px #ffd700;
+  }
+
+  100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ffd700,
+      0 0 20px #ffd700;
+  }
+}
+
+@keyframes photoGlow {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.3) saturate(1.1);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #ffd700,
+      0 0 30px #ffd700;
+    transform: scale(1);
+  }
+
+  100% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #ffd700,
+      0 0 60px #ffd700;
+    transform: scale(1.05);
+  }
+}

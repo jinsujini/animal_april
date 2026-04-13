@@ -1,0 +1,55 @@
+
+@use '../setting/var.scss' as *;
+@use '../setting/mixin' as *;
+.prayer__fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #000;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  word-break: break-all
+}
+
+.prayer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    display: block;
+  }
+
+  &__wish--glow {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+
+    text-align: center;
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    padding: 0 20px;
+
+    animation: glowScale 1.2s ease-in-out infinite;
+  }
+
+}
+.prayer__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  display: block;
+  animation: photoGlow 2s ease-in-out infinite;
+}

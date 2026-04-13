@@ -16,24 +16,24 @@ const Buddha = ({ wishData }) => {
     setMyWish(e.target.value)
   }
 
-const playBuddhaSound = () => {
-  try {
-    if (audioRef.current) {
-      audioRef.current.pause()
-      audioRef.current.currentTime = 0
-    }
+  const playBuddhaSound = () => {
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.currentTime = 0
+      }
 
-    const audio = new Audio(buddhaSound)
+      const audio = new Audio(buddhaSound)
 
-    audio.volume = 0.8
-    audio.playbackRate = 1.5   // 🔥 속도 빠르게
-    audio.currentTime = 1.5    // 🔥 앞부분 컷
+      audio.volume = 0.8
+      audio.playbackRate = 1.5   // 🔥 속도 빠르게
+      audio.currentTime = 1.5    // 🔥 앞부분 컷
 
-    audio.play()
+      audio.play()
 
-    audioRef.current = audio
-  } catch (e) {}
-}
+      audioRef.current = audio
+    } catch (e) { }
+  }
   const startPrayer = () => {
     setIsPraying(true)
     playBuddhaSound()
@@ -53,7 +53,9 @@ const playBuddhaSound = () => {
       {isPraying && (
         <div className='prayer__fullscreen'>
           <img src={BuddhaImg} alt='부처님' className='prayer__photo' />
-          <div className='prayer__wish--glow'>{myWish}</div>
+          <div className='prayer__wish--glow'><div className="name">{wishData?.name}님의 소원</div>
+            <strong> {myWish}</strong>
+            <p>기도해드릴게요</p></div>
         </div>
       )}
 

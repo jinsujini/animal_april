@@ -50,7 +50,10 @@ const Jesus = ({ wishData }) => {
       {isPraying && (
         <div className='prayer__fullscreen'>
           <img src={jesus} alt='하나님' className='prayer__photo' />
-          <div className='prayer__wish--glow'>{myWish}</div>
+          <div className='prayer__wish--glow'>
+            <div className="name">{wishData?.name}님의 소원</div>
+               <strong> {myWish}</strong>
+            <p>기도해드릴게요</p></div>
         </div>
       )}
 

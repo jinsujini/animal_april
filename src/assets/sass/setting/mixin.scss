@@ -1,0 +1,27 @@
+// ============ mixin ============
+@mixin page-theme($bg, $accent, $nav-text, $button-text) {
+  background-color: $bg;
+
+  .wish_text {
+    color: $accent;
+  }
+
+  .please_start {
+    background-color: $accent;
+    color: $button-text;
+  }
+
+  .nav {
+    background-color: $bg;
+    border-top: 1px solid darken($bg, 8%);
+  }
+
+  .nav__tab {
+    color: $nav-text;
+
+    &--active {
+      background-color: $accent;
+      color: $button-text;
+    }
+  }
+}
